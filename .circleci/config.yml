@@ -15,9 +15,7 @@ jobs:
 workflows:
   build-and-test:
     jobs:
-      - build1:
-          filters:
-            branches:
-              only: master
+      - build1
+  
 
 
