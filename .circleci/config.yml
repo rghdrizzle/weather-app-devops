@@ -3,19 +3,19 @@ version: 2.1
 orbs:
   node: circleci/node@4.7
 jobs:
-  build-and-test:
+  build1:
     executor: 
       name: node/default
     steps:
       - node/install-packages:
           pkg-manager: npm
-      - run: npm install
+      - run: echo "will add more tests"
       - run: echo "done"
 
 workflows:
   build-and-test:
     jobs:
-      - build-and-test:
+      - build1:
           filters:
             branches:
               only: master
