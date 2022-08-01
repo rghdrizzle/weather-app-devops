@@ -15,9 +15,6 @@ jobs:
 workflows:
   build-and-test:
     jobs:
-      - node/test:
-          version: '16.10'
-          pkg-manager: npm
       - build-and-test:
           filters:
             branches:
