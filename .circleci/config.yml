@@ -7,6 +7,8 @@ jobs:
     executor: 
       name: node/default
     steps:
+      - node/install-packages:
+          pkg-manager: npm
       - run: npm install
       - run: echo "done"
 
