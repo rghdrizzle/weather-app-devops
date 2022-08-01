@@ -1,0 +1,16 @@
+{
+  "name": "weather-app-test",
+  "version": "1.0.0",
+  "description": "a simple app - will later use my devops tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "luqmaan",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "request": "^2.88.2"
+  }
+}
