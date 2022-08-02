@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-app
+spec:
+  selector:
+    matchLabels:
+      app: weather-app
+  replicas: 2
+  minReadySeconds: 10
+  strategy: 
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels: 
+        app: weather-app
+    spec:
+      containers: 
+        - image: rghdrizzle/weather-app
+          imagePullPolicy: Always
+          name: weather-app
+          
