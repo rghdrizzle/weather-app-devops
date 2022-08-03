@@ -1,0 +1,31 @@
+
+version: 2.1
+orbs:
+  node: circleci/node@4.7
+jobs:
+  build1:
+    executor: 
+      name: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run: npm install express
+  test:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - run: echo "learning to write tests for nodejs"
+
+
+workflows:
+  build-and-test:
+    jobs:
+      - build1
+      - test:
+          requires:
+            - build1
+  
+
+
