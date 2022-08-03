@@ -11,13 +11,21 @@ jobs:
       - node/install-packages:
           pkg-manager: npm
       - run: npm install express
-      - run: echo "running"
-      - run: node server.js
+  test:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - run: echo "learning to write tests for nodejs"
+
 
 workflows:
   build-and-test:
     jobs:
       - build1
+      - test:
+          requires:
+            - build1
   
 
 
