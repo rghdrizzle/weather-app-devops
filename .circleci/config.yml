@@ -7,10 +7,12 @@ jobs:
     executor: 
       name: node/default
     steps:
+      - checkout
       - node/install-packages:
           pkg-manager: npm
-      - run: echo "will add more tests"
-      - run: echo "done"
+      - run: npm install express
+      - run: echo "running"
+      - run: node server.js
 
 workflows:
   build-and-test:
