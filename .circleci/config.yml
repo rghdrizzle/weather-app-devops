@@ -30,8 +30,7 @@ workflows:
             - build1
       - terraform/validate:
           checkout: true
-      - terraform/plan:
-          checkout: true
+      
           
 
   
